@@ -1,0 +1,184 @@
+<!--
+Single-file premium-looking landing page (editable).
+Replace placeholders: PAYMENT_LINK, FORM_ACTION, IMAGES. See comments below.
+Designed to be published as-is on GitHub Pages or any static host.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premium Herbal Gum — Preorder (Prepaid Only)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Lab-tested herbal chewing gum for men — premium formula. Preorder now (prepaid only). Age 18+." />
+  <style>
+    :root{
+      --bg1: #071226; /* deep navy */
+      --bg2: linear-gradient(135deg,#071226 0%, #0b2a3e 100%);
+      --card: rgba(255,255,255,0.04);
+      --muted: rgba(255,255,255,0.65);
+      --accent: #c9a74a; /* gold */
+      --radius: 14px;
+      --container: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial;margin:0;background:var(--bg2);color:#fff;line-height:1.45}
+    .wrap{max-width:var(--container);margin:48px auto;padding:24px}
+
+    /* Header / Hero */
+    header{display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:Playfair Display,serif;font-size:24px;color:var(--accent);letter-spacing:1px}
+    .no-cod{background:rgba(0,0,0,0.35);padding:8px 12px;border-radius:10px;font-size:13px}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;margin-top:28px}
+    .headline{font-family:Playfair Display,serif;font-size:44px;margin:0 0 14px}
+    .sub{color:var(--muted);font-size:16px;margin-bottom:22px}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .feature{background:var(--card);padding:10px 12px;border-radius:10px;font-size:14px;color:var(--muted)}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:26px;border-radius:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .price{font-size:20px;font-weight:600;color:var(--accent);margin-bottom:8px}
+    .buy{display:block;text-decoration:none;text-align:center;padding:14px 18px;border-radius:12px;font-weight:600;margin-top:10px;background:linear-gradient(90deg,var(--accent),#e8c971);color:#041022}
+    .small{font-size:13px;color:var(--muted);margin-top:10px}
+
+    /* trust & about */
+    section{margin-top:40px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tile{background:var(--card);padding:18px;border-radius:12px}
+
+    footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:1fr}
+    }
+
+    /* Age gate */
+    .age-modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(3,6,12,0.6),rgba(3,6,12,0.6));z-index:9999}
+    .age-box{background:#061323;padding:28px;border-radius:12px;text-align:center;max-width:420px}
+    .age-box button{margin-top:14px;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#041022;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">Capital-Grade Botanics</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="no-cod">Prepaid orders only — No COD</div>
+      </div>
+    </header>
+
+    <main class="hero">
+      <div>
+        <h1 class="headline">Premium Herbal Chewing Gum — Preorder</h1>
+        <p class="sub">100% natural, lab-tested botanical formula to support men’s sexual wellness and vitality. Discreet, portable, clinically-checked ingredients.</p>
+
+        <div class="features">
+          <div class="feature">🌿 100% plant-based</div>
+          <div class="feature">🧪 Third-party lab-tested</div>
+          <div class="feature">⚡ Fast-acting reported by users</div>
+        </div>
+
+        <section style="margin-top:20px">
+          <div class="tile">
+            <strong>How preorder works</strong>
+            <ol style="margin:10px 0 0 18px;color:var(--muted);font-size:14px">
+              <li>Click <em>Preorder Now</em> and complete secure prepaid payment.</li>
+              <li>Fill shipping details on the next form (or we'll request them via WhatsApp).</li>
+              <li>We confirm and place order with manufacturer — delivery follows.</li>
+            </ol>
+            <div class="small">We ship only after payment is received. No cash on delivery.</div>
+          </div>
+        </section>
+
+        <section style="margin-top:18px">
+          <div class="tile">
+            <strong>What users reported*</strong>
+            <p style="color:var(--muted);font-size:14px;margin-top:8px">Many men in a small informal trial reported improved confidence, perceived libido and intimacy. Individual experiences vary. *Self-reported feedback.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <div class="price">Preorder price: ₹799 (Intro)</div>
+          <div style="font-size:13px;color:var(--muted)">Secure prepaid checkout. Limited slots.</div>
+
+          <!-- Replace PAYMENT_LINK below with your Razorpay / Instamojo / Stripe payment link -->
+          <a class="buy" id="payBtn" href="PAYMENT_LINK_HERE" target="_blank" rel="noopener">Preorder Now — Pay Securely</a>
+
+          <div class="small">Accepted: UPI / Cards / Netbanking / Wallets. After payment, return to the site and complete the address form or send order ID via WhatsApp.</div>
+        </div>
+
+        <div style="height:18px"></div>
+
+        <div class="card" style="padding:14px">
+          <strong style="display:block">Shipping & Fulfillment</strong>
+          <div class="small" style="margin-top:8px">We place manufacturer orders after confirming prepaid payment. Estimated ship: 10–18 business days (depends on manufacturer).</div>
+        </div>
+      </aside>
+    </main>
+
+    <section>
+      <div class="grid" style="margin-top:20px">
+        <div class="tile">
+          <strong>Trust</strong>
+          <p class="small">Third-party lab testing. GMP manufacturing. Secure payments only.</p>
+        </div>
+        <div class="tile">
+          <strong>Age & Safety</strong>
+          <p class="small">18+ only. Not medical advice. Consult a doctor for health concerns.</p>
+        </div>
+        <div class="tile">
+          <strong>Contact</strong>
+          <p class="small">WhatsApp: +91-XXXXXXXXXX<br>Email: orders@example.com</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      *Self-reported trial of ~100 adult men. No significant side effects reported during limited observation. Individual results vary. Refund policy applies for defective packs only.
+    </footer>
+
+  </div>
+
+  <!-- Age gate: show on first load -->
+  <div id="ageGate" class="age-modal">
+    <div class="age-box">
+      <div style="font-size:18px;font-weight:600">18+ Only</div>
+      <div style="color:var(--muted);margin-top:8px">This product is intended for adult men. By continuing you confirm you are 18 years or older.</div>
+      <div>
+        <button id="ageOk">I am 18+</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Age gate
+    document.getElementById('ageOk').addEventListener('click', function(){
+      document.getElementById('ageGate').style.display='none';
+    });
+
+    // Quick convenience: replace PAYMENT_LINK_HERE in DOM with a prompt if not set
+    (function(){
+      var btn=document.getElementById('payBtn');
+      if(btn && btn.href.includes('PAYMENT_LINK_HERE')){
+        btn.addEventListener('click',function(e){
+          e.preventDefault();
+          alert('Replace PAYMENT_LINK_HERE in the HTML with your real payment link (Razorpay/Instamojo/Stripe). See instructions in the dashboard of your payment provider.');
+        });
+      }
+    })();
+  </script>
+
+  <!--
+  QUICK HOW-TO (replace in this file):
+   1) Create a payment link at Razorpay or Instamojo. Copy the link here (replace PAYMENT_LINK_HERE).
+   2) Create a Formspree/Google Form to collect name/address and paste the form action URL in the order-processing flow.
+   3) Publish this HTML to GitHub Pages (create repo, add index.html, enable Pages) OR host on Netlify/Vercel as a free static site.
+  -->
+</body>
+</html>
